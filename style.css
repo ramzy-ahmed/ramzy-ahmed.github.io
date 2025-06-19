@@ -5,17 +5,46 @@
   --primary-dark: #00bbf9;
   --secondary-color: #f15bb5;
   --accent-color: #fee440;
+  --particles-js: #0f0f2d;
   --dark-bg: #0f0f2d;
   --dark-card: #1e1e1e;
   --dark-text: #e0e0e0;
   --light-text: #f5f5f5;
   --gray-text: #ccc;
+  --box-shadow: rgba(0, 245, 212, 0.2);
+  --skill-chip:rgba(0, 245, 212, 0.1);
+  --editor-bg: rgba(37, 37, 37, 0.7);
+  --oneditor-foucas: rgba(37, 37, 37, 0.9);
+  --contact-hover: rgba(0, 245, 212, 0.2);
+  --editor-border: #333;
   --border-radius: 12px;
   --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --glass-bg: rgba(30, 30, 30, 0.5);
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* الوضع الفاتح */
+[data-theme='light'] {
+  --primary-color: #006d50;
+  --primary-dark: #83c5be;
+  --secondary-color: #ff006e;
+  --accent-color: #ffd166;
+  --particles-js: #eaeef3;
+  --dark-bg: #eaeef3;
+  --dark-card: #f0f0f0;
+  --dark-text: #1e1e1e;
+  --light-text: #0f0f2d;
+  --gray-text: #333;
+  --box-shadow: rgba(30, 30, 30, 0.3);
+  --editor-bg: rgba(255, 255, 255, 0.6);
+  --oneditor-foucas: rgba(230, 230, 230, 0.9);
+  --contact-hover:rgba(0, 109, 80, 0.3);
+  --editor-border: #ccc;
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 * {
   margin: 0;
@@ -179,10 +208,6 @@ nav {
 .nav-brand {
   display: flex;
   flex-direction: column;
-}
-
-.navLinks{
-  background: #00bbf9;
 }
 
 .logo {
@@ -352,7 +377,7 @@ header h2 {
 }
 
 .skill-chip {
-  background-color: rgba(0, 245, 212, 0.1);
+  background-color: var(--skill-chip);
   color: var(--primary-color);
   padding: 10px 18px;
   border-radius: 30px;
@@ -363,7 +388,7 @@ header h2 {
 
 .skill-chip:hover {
   background-color: rgba(0, 245, 212, 0.2);
-  transform: translateY(-3px);
+  transform: translateY(-8px);
 }
 
 /* Modern Skills Section */
@@ -437,9 +462,9 @@ header h2 {
   bottom: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0.1) 100%
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.9) 100%
   );
   animation: shimmer 2s infinite;
 }
@@ -456,18 +481,18 @@ header h2 {
 }
 
 .skill-tag {
-  background-color: rgba(0, 245, 212, 0.1);
+  background-color: var(--skill-chip);
   color: var(--primary-color);
   padding: 12px;
   border-radius: 6px;
   font-size: 0.95rem;
   text-align: center;
   transition: var(--transition);
-  border: 1px solid rgba(0, 245, 212, 0.3);
+  border: 1px solid var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .skill-tag:hover {
@@ -498,7 +523,7 @@ header h2 {
 
 .project-card:hover {
   transform: translateY(-10px) perspective(1000px) rotateX(5deg);
-  box-shadow: 0 25px 50px -12px rgba(0, 245, 212, 0.3);
+  box-shadow: 0 25px 50px -12px var(--box-shadow);
 }
 
 .project-image {
@@ -538,17 +563,18 @@ header h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  color: #0f0f2d;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 .project-tags span {
-  background-color: rgba(0, 245, 212, 0.1);
+  background-color: var(--skill-chip);
   color: var(--primary-color);
   padding: 6px 14px;
   border-radius: 30px;
-  font-size: 0.85rem;
-  border: 2px solid rgba(0, 245, 212, 0.9);
+  font-size: 1rem;
+  border: 1.5px solid var(--primary-color);
 }
 
 .project-features {
@@ -740,8 +766,9 @@ header h2 {
 }
 
 .contact-item:hover {
-  background: rgba(0, 245, 212, 0.1);
+  background:var(--contact-hover);
   transform: translateX(5px);
+  color: var(--light-text);
 }
 
 .contact-item i {
@@ -776,8 +803,8 @@ header h2 {
 .form-group textarea {
   width: 100%;
   padding: 16px 20px;
-  background-color: rgba(37, 37, 37, 0.7);
-  border: 1px solid #333;
+  background-color: var(--editor-bg);
+  border: 1px solid var(--editor-border);
   border-radius: var(--border-radius);
   color: var(--light-text);
   font-family: 'Poppins', sans-serif;
@@ -790,7 +817,7 @@ header h2 {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.2);
-  background-color: rgba(37, 37, 37, 0.9);
+  background-color: var(--oneditor-foucas);
 }
 
 .form-group textarea {
@@ -823,8 +850,8 @@ header h2 {
 footer {
   padding: 40px 0 25px;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(30, 30, 30, 0.5);
+  border-top: var(--glass-border);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -849,7 +876,7 @@ footer {
 }
 
 .footer-links a {
-  color: var(--light-text);
+  color: var(--dark-bg);
   font-size: 1.5rem;
   width: 60px;
   height: 60px;
@@ -864,7 +891,7 @@ footer {
 .footer-links a:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 245, 212, 0.3);
-  color: var(--dark-bg);
+  color: var(--light-text);
 }
 
 .copyright {
@@ -1116,6 +1143,6 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #0f0f2d; /* لون غامق */
+  background: var(--particles-js);
   z-index: -1;
 }
