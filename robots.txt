@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ramzy-ahmed.github.io/sitemap.atom
+Sitemap: https://ramzy-ahmed.github.io/sitemap.xml
