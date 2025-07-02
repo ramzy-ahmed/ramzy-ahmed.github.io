@@ -57,6 +57,7 @@ html {
 }
 
 body {
+  padding: auto;
   font-family: 'Poppins', sans-serif;
   background-color: var(--dark-bg);
   color: var(--light-text);
@@ -73,7 +74,7 @@ body {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
@@ -198,11 +199,12 @@ nav {
   align-items: center;
   padding: 20px 5%;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 1%;
+  left: 2%;
+  right: 2%;
+  border-radius: 30px;
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: var(--glass-border);
   z-index: 1000;
@@ -242,7 +244,7 @@ nav {
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   position: relative;
   font-size: 1.05rem;
 }
@@ -284,6 +286,7 @@ nav {
 
 /* Modern Header */
 header {
+  padding: 0 5%;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -318,7 +321,7 @@ header h2 {
 
 /* Modern Sections */
 .section {
-  padding: 100px 0;
+  padding: 100px 30px;
   scroll-margin-top: 40px;
 }
 
@@ -869,11 +872,13 @@ header h2 {
 
 /* Modern Footer */
 footer {
+  margin: 0% 1% 0% 1%;
   padding: 40px 0 25px;
   text-align: center;
   border-top: var(--glass-border);
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
+  border-radius: 50px 50px 0 0;
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -975,14 +980,13 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 245, 212, 0.4);
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .section {
-    padding: 80px 0;
-  }
-}
 
-@media (max-width: 992px) {
+
+
+/* Modern Code Editor Styles */
+
+/* لابتوب 14 بوصة و 15.6 بوصة */
+@media (min-width: 992px) and (max-width: 1199px) {
 
   .about-content,
   .contact-container {
@@ -994,8 +998,16 @@ footer {
     flex-direction: column;
   }
 
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+  }
+
   .project-image {
-    height: 200px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .education-card {
@@ -1003,7 +1015,8 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+/* landscape تابلت أفقي */
+@media (min-width: 769px) and (max-width: 991px) {
   .menu-toggle {
     display: block;
   }
@@ -1023,8 +1036,89 @@ footer {
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
   }
 
+  .job-title {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  .skill-category {
+    border: var(--glass-border);
+    padding: 25px;
+  }
+
+  .section {
+    padding: 25px 15px;
+    margin: auto;
+    scroll-margin-top: 110px;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
   .projects-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+  }
+
+  .project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image {
+    flex-shrink: 0;
+    margin: 1rem;
+  }
+
+  .about-image img {
+    width: 520px;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* تابلت عمودي / موبايل كبير */
+@media(max-width:768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    padding: 60px 0px 0px 0px;
+
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 100px 40px;
+    transition: var(--transition);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .projects-grid {
+    display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
@@ -1051,11 +1145,12 @@ footer {
 
   .skill-category {
     border: var(--glass-border);
-    padding: 30px;
+    padding: 25px;
   }
 
   .section {
-    padding: 100px 0;
+    padding: 25px 15px;
+    margin: auto;
     scroll-margin-top: 110px;
   }
 
@@ -1098,6 +1193,12 @@ footer {
     margin: 1rem;
   }
 
+  .project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   .about-image img {
     width: 320px;
     height: 320px;
@@ -1108,11 +1209,48 @@ footer {
   }
 }
 
-@media (max-width: 576px) {
+
+/* موبايلات صغيرة */
+@media(max-width: 576px) {
 
   html,
   body {
     overflow-x: hidden;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 100px 40px;
+    transition: var(--transition);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    letter-spacing: 1px;
   }
 
   header h2 {
@@ -1162,6 +1300,12 @@ footer {
     right: 20px;
   }
 
+  .project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   .skills-container,
   .about-content,
   .contact-container {
@@ -1173,12 +1317,6 @@ footer {
     flex-direction: column;
   }
 
-  .project-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
   .education-card {
     padding: 25px;
   }
@@ -1186,6 +1324,62 @@ footer {
   .menu-toggle {
     font-size: 1.8rem;
     padding: 10px;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary {
+    margin: 0px 25px;
+  }
+
+  .btn-secondary {
+    margin: 0px 25px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image {
+    flex-shrink: 0;
+    margin: 1rem;
+  }
+
+  .about-image img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-content {
+    margin-bottom: 10px;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+
+  .job-title {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    letter-spacing: 1px;
   }
 }
 
