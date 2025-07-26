@@ -11,14 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
     <link rel="sitemap" type="application/xml" title="sitemap" href="https://ramzy-ahmed.github.io/sitemap.xml">
     <link rel="manifest" href="manifest.json">
 
@@ -258,7 +261,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/online-store" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank"  rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -321,18 +324,14 @@
                         <ul class="project-features">
                             <li>Automatically records check-in and check-out times using the current system time.</li>
                             <li>Calculates total working hours per day.</li>
-                            <li>Overtime is calculated for hours exceeding the official daily work hours (default is 8
-                                hours).</li>
+                            <li>Overtime is calculated for hours exceeding the official daily work hours (default is 8 hours).</li>
                             <li>Handles shifts that cross midnight and splits hours between two days properly.</li>
                             <li>settings to customize: </li>
-                            <ul>
-                                <li>Official working hours per day</li>
-                                <li>Overtime hourly rate</li>
-                                <li>Basic monthly salary</li>
-                                <li>Work days (choose your official working days)</li>
-                                <li>Official days off (customizable per week)</li>
-                            </ul>
-
+                            <li>Official working hours per day</li>
+                            <li>Overtime hourly rate</li>
+                            <li>Basic monthly salary</li>
+                            <li>Work days (choose your official working days)</li>
+                            <li>Official days off (customizable per week)</li>
                             <li>Clean and intuitive UI with support for Arabic & English languages.</li>
                             <li>Supports Dark mode and Light mode for better accessibility.</li>
                             <li>Notifications and reminders for forgetting to check-in/out.</li>
@@ -350,7 +349,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/Smart-Salary-Tracker" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -394,7 +393,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/Music-Player" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -439,7 +438,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/Music-Player" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -475,7 +474,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/fitnnes_tracker_app" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -512,7 +511,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/random_quote_generator_app" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -549,7 +548,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/ramzy-ahmed/flashcard_quiz_app" class="btn btn-outline"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -559,7 +558,7 @@
                
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1753514690/Random_Quote_Generator_App_pmaoaz.webp" loading="lazy" alt="Travel Ticket App ">
+                        <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1753514691/preview_fqlbhs.jpg" loading="lazy" alt="Travel Ticket App ">
                     </div>
                     <div class="project-content">
                         <h3>Personal Birthday App</h3>
@@ -580,9 +579,9 @@
                             <span>Gradle</span>
                         </div>
                         <div class="project-links">
-                            <a class="btn btn-outline" target="_blank">
+                            <button class="btn btn-outline">
                                 <i class="fab fa-github"></i> View Code
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -706,22 +705,22 @@
             <div class="footer-content">
                 <h4>Let's create something amazing together!</h4>
                 <div class="footer-links">
-                    <a href="https://github.com/ramzy-ahmed" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/ramzy-ahmed" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://t.me/Ramzy_Ahmed_dev" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.facebook.com/share/1KgQ8oY7Ud" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="mailto:ramzy12234@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ramzy-ahmed" target="_blank"  aria-label="Visit my GitHub profile" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/ramzy-ahmed" target="_blank" aria-label="Visit my LinkedIn profile" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://t.me/Ramzy_Ahmed_dev" target="_blank" aria-label="Contact me on Telegram" title="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/share/1KgQ8oY7Ud" target="_blank" aria-label="Visit my Facebook profile" title="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="mailto:ramzy12234@gmail.com" aria-label="Send me an email" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p class="copyright">&copy;2025 Ramzy Ahmed. All Rights Reserved.</p>
             </div>
         </footer>
     </div>
 
-    <button class="theme-toggle" id="themeToggle">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </button>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="main.js" defer></script>
 
 </body>
 
