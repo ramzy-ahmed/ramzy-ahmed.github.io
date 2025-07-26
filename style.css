@@ -24,7 +24,14 @@
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* الوضع الفاتح */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/poppins-700.woff2') format('woff2');
+}
+/* Light Theme Variables */
 [data-theme='light'] {
   --primary-color: #006d50;
   --primary-dark: #83c5be;
@@ -44,8 +51,6 @@
   --glass-bg: rgba(255, 255, 255, 0.5);
   --glass-border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +84,6 @@ body {
   position: relative;
 }
 
-/* Modern Typography */
 h1,
 h2,
 h3,
@@ -117,7 +121,6 @@ a:hover {
   color: var(--primary-dark);
 }
 
-/* Modern Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -284,7 +287,6 @@ nav {
   transform: rotate(90deg);
 }
 
-/* Modern Header */
 header {
   padding: 0 5%;
   height: 100vh;
@@ -347,7 +349,6 @@ header h2 {
   margin-left: 25px;
 }
 
-/* Modern About Section */
 .about-content {
   display: flex;
   gap: 60px;
@@ -489,7 +490,7 @@ header h2 {
 }
 
 @keyframes shimmer {
-  0% {
+  5% {
     transform: translateX(-100%);
   }
 
