@@ -28,8 +28,29 @@
   font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
+  font-weight: 300;
+  src: url('https://res.cloudinary.com/ddfpaqagg/raw/upload/v1753539846/poppins-300_najht0.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://res.cloudinary.com/ddfpaqagg/raw/upload/v1753539846/poppins-500_mweywx.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; 
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://res.cloudinary.com/ddfpaqagg/raw/upload/v1753539846/poppins-600_kzilvr.woff2') format('woff2'); 
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 700;
-  src: url('fonts/poppins-700.woff2') format('woff2');
+  src: url('https://res.cloudinary.com/ddfpaqagg/raw/upload/v1753539847/poppins-700_e4ilah.woff2') format('woff2');
 }
 /* Light Theme Variables */
 [data-theme='light'] {
