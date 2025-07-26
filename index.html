@@ -19,8 +19,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
 
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="stylesheet" href="style.css">
 
     <link rel="sitemap" type="application/xml" title="sitemap" href="https://ramzy-ahmed.github.io/sitemap.xml">
     <link rel="manifest" href="manifest.json">
@@ -84,7 +83,7 @@
                 <h1 class="logo">Ramzy Ahmed</h1>
                 <span class="job-title">Android Developer</span>
             </div>
-            <button class="menu-toggle" onclick="toggleMenu()">
+            <button class="menu-toggle" aria-label="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
