@@ -1,3 +1,53 @@
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize AOS (Animate on Scroll)
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+    offset: 50,
+  });
+
+  // Typed.js for the hero section typing effect
+  const typed = new Typed('#typed-text', {
+
+    strings: ['Turning Ideas Into Mobile Experiences.',
+      'I transform innovative ideas into powerful mobile applications.',
+      'I specialize in turning your concepts into beautiful, functional mobile apps.',
+      'I craft seamless and intuitive mobile experiences from the ground up.',
+      'Expert in building high-quality mobile apps that users love.',
+      'Creating engaging mobile applications with a focus on performance and design.',
+      'Bringing your mobile app visions to life with modern architecture and stunning UI/UX.',
+      'Passionate about developing mobile solutions that make a difference.',
+      'Dedicated to delivering top-notch mobile applications tailored to your needs.',
+      'Transforming ideas into sleek, user-friendly mobile apps with cutting-edge technology.',
+      'Building mobile applications that combine innovation, usability, and aesthetics.',
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2500,
+    loop: true,
+    smartBackspace: true,
+    showCursor: true,
+    autoInsertCss: true,
+  });
+
+  // Hide header on scroll down, show on scroll up
+  let lastScrollTop = 0;
+  const header = document.querySelector('.main-header');
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+      // Scroll Down
+      header.style.top = `-130px`;
+    } else {
+      // Scroll Up
+      header.style.top = '0';
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  }, false);
+
+});
 
 // Toggle mobile menu
 function toggleMenu() {
@@ -14,7 +64,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 // Close menu when clicking outside
 document.addEventListener('click', function (event) {
-  const menu = document.getElementById('navLinks');
+  const menu = document.getElementById('.navLinks');
   const button = document.querySelector('.menu-toggle');
   if (menu.classList.contains('show')) {
     if (!menu.contains(event.target) && !button.contains(event.target)) {
@@ -23,87 +73,23 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+projectsScroll('scroll-left-android-projects', 'scroll-right-android-projects', '.android-projects');
+projectsScroll('scroll-left-flutter-projects', 'scroll-right-flutter-projects', '.flutter-projects');
+
+  function projectsScroll(scroll_left, scroll_right, projects_container) {
+  // أزرار التمرير يمين ويسار
+  const scrollLeftBtn = document.getElementById(scroll_left);
+  const scrollRightBtn = document.getElementById(scroll_right);
+  const projectsContainer = document.querySelector(projects_container);
+
+  scrollLeftBtn.addEventListener('click', () => {
+    projectsContainer.scrollBy({ left: -350, behavior: 'smooth' });
   });
-});
 
-// Particles.js configuration
-const particlesDark = {
-  particles: {
-    number: { value: 100, density: { enable: true, value_area: 900 } },
-    color: { value: ["#00f5d4", "#00bbf9", "#9b5de5", "#f15bb5"] },
-    shape: {
-      type: "circle",
-      stroke: { width: 0, color: "#000" },
-      polygon: { nb_sides: 8 }
-    },
-    opacity: {
-      value: 0.6, random: true,
-      anim: { enable: true, speed: 0.5, opacity_min: 0.5, sync: false }
-    },
-    size: {
-      value: 6, random: true,
-      anim: { enable: true, speed: 3, size_min: 0.8, sync: false }
-    },
-    line_linked: {
-      enable: true, distance: 130,
-      color: "#ffffff", opacity: 0.3, width: 1.5
-    },
-    move: {
-      enable: true, speed: 2.5, direction: "none",
-      random: false, straight: false, out_mode: "out",
-      bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 }
-    }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: ["grab", "bubble"] },
-      onclick: { enable: true, mode: "repulse" },
-      resize: true
-    },
-    modes: {
-      grab: { distance: 160, line_linked: { opacity: 0.5 } },
-      bubble: { distance: 200, size: 8, duration: 2, opacity: 0.8, speed: 3 },
-      repulse: { distance: 100, duration: 0.4 },
-      push: { particles_nb: 4 },
-      remove: { particles_nb: 2 }
-    }
-  },
-  retina_detect: true
+  scrollRightBtn.addEventListener('click', () => {
+    projectsContainer.scrollBy({ left: 350, behavior: 'smooth' });
+  });
 };
-
-
-const particlesLight = JSON.parse(JSON.stringify(particlesDark));
-particlesLight.particles.color.value = ["#006d77", "#83c5be", "#ff006e", "#ffd166"];
-particlesLight.particles.line_linked.color = "#000000";
-
-
-function loadParticles(theme) {
-  const config = theme === 'light' ? particlesLight : particlesDark;
-
-  
-  if (window.pJSDom && window.pJSDom.length) {
-    window.pJSDom[0].pJS.fn.vendors.destroypJS();
-    window.pJSDom = []; 
-  }
-
-  let particlesContainer = document.getElementById('particles-js');
-  if (!particlesContainer) {
-    particlesContainer = document.createElement('div');
-    particlesContainer.id = 'particles-js';
-    document.body.appendChild(particlesContainer);
-  } else {
-    particlesContainer.innerHTML = '';
-  }
-  particlesJS('particles-js', config);
-}
 
 // Theme toggle
 const themeToggle = document.getElementById('themeToggle');
@@ -114,8 +100,6 @@ themeToggle.innerHTML = currentTheme === 'light'
   ? '<i class="fas fa-moon"></i>'
   : '<i class="fas fa-sun"></i>';
 
-loadParticles(currentTheme);
-
 themeToggle.addEventListener('click', () => {
   let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', theme);
@@ -123,5 +107,4 @@ themeToggle.addEventListener('click', () => {
   themeToggle.innerHTML = theme === 'light'
     ? '<i class="fas fa-moon"></i>'
     : '<i class="fas fa-sun"></i>';
-  loadParticles(theme);
 });
