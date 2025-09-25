@@ -49,30 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// Toggle mobile menu
-function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  nav.classList.toggle('show');
-}
-
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('show');
-  });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', function (event) {
-  const menu = document.getElementById('.navLinks');
-  const button = document.querySelector('.menu-toggle');
-  if (menu.classList.contains('show')) {
-    if (!menu.contains(event.target) && !button.contains(event.target)) {
-      menu.classList.remove('show');
-    }
-  }
-});
-
 projectsScroll('scroll-left-android-projects', 'scroll-right-android-projects', '.android-projects');
 projectsScroll('scroll-left-flutter-projects', 'scroll-right-flutter-projects', '.flutter-projects');
 

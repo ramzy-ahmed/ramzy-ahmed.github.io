@@ -29,12 +29,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 menuButton.querySelector('i').classList.add('fa-bars');
             });
         });
-
-        // FAQ accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                question.classList.toggle('active');
-            });
-        });
     }
 });
