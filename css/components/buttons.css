@@ -8,6 +8,8 @@
 .btn-primary {
   background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
   color: white;
+  border: none;
+  font-size: clamp(0.8rem, 2vw, 1rem);
   box-shadow: var(--shadow-btn-primary);
 }
 

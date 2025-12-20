@@ -164,8 +164,6 @@
 </head>
 
 <body>
-
-
     <main class="container">
         <section class="header-section">
 
@@ -204,7 +202,7 @@
                         <a href="#contact">Contact</a>
                     </div>
 
-                    <button class="mobile-menu-button">
+                    <button class="mobile-menu-button" title="Menu" aria-label="Toggle Menu">
                         <i class="fas fa-bars"></i>
                     </button>
 
@@ -246,7 +244,7 @@
                     <div class="image-rings"><span></span><span></span></div>
                     <div class="circle-bg"></div>
 
-                    <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1766218199/Ramzy-Ahmed-Mobile-App-Developer-color_ow8ehu.webp" alt="Ramzy Ahmed" class="hero-img" />
+                    <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1766218199/Ramzy-Ahmed-Mobile-App-Developer-color_ow8ehu.webp" alt="Ramzy Ahmed" class="hero-img" loading="lazy"/>
 
                     <div class="shape shape-triangle"></div>
                     <div class="shape shape-zigzag"></div>
@@ -404,8 +402,8 @@
                         <!-- Android Cards will be injected here -->
                     </div>
                     <div class="scroll-btn-container">
-                        <button class="scroll-btn left" id="scroll-left-android-projects">&#10094;</button>
-                        <button class="scroll-btn right" id="scroll-right-android-projects">&#10095;</button>
+                        <button class="scroll-btn left" id="scroll-left-android-projects" title="Left" aria-label="Toggle Left" >&#10094;</button>
+                        <button class="scroll-btn right" id="scroll-right-android-projects" title="Right" aria-label="Toggle Right">&#10095;</button>
                     </div>
                 </div>
             </div>
@@ -422,10 +420,9 @@
                         <!-- Flutter Cards will be injected here -->
                     </div>
                     <div class="scroll-btn-container">
-                        <button class="scroll-btn left" id="scroll-left-flutter-projects">&#10094;</button>
-                        <button class="scroll-btn right" id="scroll-right-flutter-projects">&#10095;</button>
+                        <button class="scroll-btn left" id="scroll-left-flutter-projects" title="Left" aria-label="Toggle Left">&#10094;</button>
+                        <button class="scroll-btn right" id="scroll-right-flutter-projects" title="Right" aria-label="Toggle Right">&#10095;</button>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -651,9 +648,9 @@
                         <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
                         <label for="message">Your Message</label>
                     </div>
-                    <a type="submit" class="btn btn-primary send-btn">
+                    <button type="submit" class="btn btn-primary send-btn">
                         <i class="fas fa-paper-plane"></i>Send Message
-                    </a>
+                    </button>
                 </form>
             </div>
         </section>
@@ -679,13 +676,13 @@
         </div>
     </footer>
 
-    <a class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+    <a class="theme-toggle" id="themeToggle" title="Theme" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </a>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="project_mangemnt.js"></script>
-    <script src="mobile_menu.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer></script>
+    <script src="project_mangemnt.js" defer></script>
+    <script src="mobile_menu.js" defer></script>
     <script src="main.js" defer></script>
 </body>
 

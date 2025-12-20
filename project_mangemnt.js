@@ -55,17 +55,17 @@ class ProjectManager {
       <div class="project-image">
         <div class="image-slider" id="slider-${index}">
           <div class="slider-container">
-            ${project.images.map(img => `<img src="${img}" alt="${project.title}" class="slider-image">`).join('')}
+            ${project.images.map(img => `<img src="${img}" alt="${project.title}" class="slider-image" loading="lazy">`).join('')}
           </div>
           <div class="slider-nav">
             ${project.images.map((_, i) => `<div class="slider-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`).join('')}
           </div>
           <div class="slider-arrows">
-            <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-arrow prev" title="prev" aria-label="Toggle prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next" title="next" aria-label="Toggle next"><i class="fas fa-chevron-right"></i></button>
           </div>
           <div class="slider-controls">
-            <button class="control-btn play-pause" title="تشغيل/إيقاف السلايدر التلقائي">
+            <button class="control-btn play-pause" title="play pause" aria-label="Toggle play pause">
               <i class="fas fa-play"></i>
             </button>
           </div>
