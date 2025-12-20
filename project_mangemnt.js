@@ -1,8 +1,21 @@
 class ProjectManager {
   constructor() {
-    this.imageModal = document.getElementById('imageModal');
+    this.imageModal = document.getElementById('imageDialog');
     this.modalImage = document.getElementById('modalImage');
     this.closeModal = document.getElementById('closeModal');
+    // تحقق: هل تم العثور على عنصر الديالوج؟
+    if (!this.imageModal) {
+      console.error("⛔ فشل: لم يتم العثور على عنصر <dialog id='imageModal'>. تحقق من ID.");
+      return; // توقف عن تنفيذ الكلاس إذا لم يتم العثور عليه
+    }
+
+    // تحقق: هل تم العثور على زر الإغلاق؟
+    if (!this.closeModal) {
+      console.warn("⚠️ تنبيه: لم يتم العثور على زر الإغلاق <button id='closeModal'>.");
+    }
+
+    console.log("✅ نجاح: تم العثور على عنصر الديالوج والتهيئة جارية.");
+
     this.addModalEventListeners();
   }
 
@@ -66,9 +79,9 @@ class ProjectManager {
         <div class="details" aria-hidden="true">
           <div class="details-inner">
             <p>${project.description}</p>
-            <h4 style="margin:10px 0 6px;color:var(--primary-color)">Features</h4>
+            <h4 style="margin:10px 0 6px;color:var(--primary-dark)">Features</h4>
             <ul class="project-features">${project.features.map(f => `<li>${f}</li>`).join('')}</ul>
-            <h4 style="margin:10px 0 6px;color:var(--primary-color)">Tech Stack</h4>
+            <h4 style="margin:10px 0 6px;color:var(--primary-dark)">Tech Stack</h4>
             <div class="project-tags">${project.tech.map(t => `<span>${t}</span>`).join('')}</div>
             <div class="project-linkse">
               ${project.github ? `<a class="btn-github" href="${project.github}" target="_blank"><i class="fab fa-github"></i>View Code</a>` : ''}
@@ -107,6 +120,14 @@ class ProjectManager {
 
     const nextSlide = () => {
       currentIndex = (currentIndex + 1) % totalImages;
+      updateSlider();
+    };
+
+    const prevSlide = () => {
+      if (currentIndex === 0) {
+        currentIndex = totalImages;
+      }
+      currentIndex = (currentIndex - 1) % totalImages;
       updateSlider();
     };
 
@@ -192,18 +213,13 @@ class ProjectManager {
   // Opens the image modal
   openImageModal(src) {
     this.modalImage.src = src;
-    this.imageModal.style.display = 'flex';
+    this.imageModal.showModal();
   }
 
   // Adds event listeners for the image modal
   addModalEventListeners() {
     this.closeModal.addEventListener('click', () => {
-      this.imageModal.style.display = 'none';
-    });
-    this.imageModal.addEventListener('click', (e) => {
-      if (e.target === this.imageModal) {
-        this.imageModal.style.display = 'none';
-      }
+      this.imageModal.close();
     });
     document.addEventListener('click', (e) => {
       const insideCard = e.target.closest('.card');

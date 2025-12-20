@@ -21,7 +21,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+
+    <link rel="stylesheet" href="css/components/buttons.css">
+
+    <link rel="stylesheet" href="css/layout/header_nav.css">
+    <link rel="stylesheet" href="css/layout/sections_base.css">
+
+    <link rel="stylesheet" href="css/components/skills_cards.css">
+    <link rel="stylesheet" href="css/components/project_cards.css">
+    <link rel="stylesheet" href="css/components/dialog_modal.css">
+    <link rel="stylesheet" href="css/components/timeline.css">
+    <link rel="stylesheet" href="css/components/form_contact.css">
+    <link rel="stylesheet" href="css/components/theme_toggle.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+
+    <link rel="stylesheet" href="css/utilities/animations.css">
+    <link rel="stylesheet" href="css/media_queries/responsive.css">
 
     <link rel="sitemap" type="application/xml" title="sitemap" href="https://ramzy-ahmed.github.io/sitemap.xml">
     <link rel="manifest" href="manifest.json">
@@ -146,63 +164,106 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header class="main-header" data-aos="fade-down" data-aos-delay="200">
-        <nav>
-            <div class="nav-brand">
-                <h1 class="logo">Ramzy Ahmed</h1>
-                <span class="job-title">Mobile App Developer</span>
-            </div>
-            <div class="desktop-menu nav-links">
-                <a href="#person"><i class="fas fa-user"></i> About</a>
-                <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-                <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
-                <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-                <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            </div>
-            <button class="mobile-menu-button" alt="Menu Button">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
 
-        <div class="mobile-menu nav-links">
-            <a href="#person"><i class="fas fa-user"></i> About</a>
-            <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-            <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
-            <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-            <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-        </div>
-    </header>
 
     <main class="container">
-        <header class="header-section">
-            <div class="header-content">
-                <h2 class="typed-text" data-aos="fade-up"><span class="words" id="typed-text"></span></h2>
-                <p class="subtitle" data-aos="fade-up" data-aos-delay="150">Passionate Mobile Developer with expertise
-                    in Android (Kotlin & Java) and Flutter, building smooth and intuitive cross-platform applications
-                    with modern architecture and elegant UI/UX.</p>
-                <div class="header-buttons">
-                    <a href="#projects" class="btn btn-primary work-btn" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-eye"></i> View My Work
-                    </a>
-                    <a href="#contact" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="450">
-                        <i class="fas fa-paper-plane"></i> Contact Me
-                    </a>
+        <section class="header-section">
+
+            <div class="tech-grid"></div>
+            <div class="hero-glow"></div>
+
+            <span class="ui-symbol plus">+</span>
+            <span class="ui-symbol circle">○</span>
+            <span class="ui-symbol triangle">▲</span>
+
+            <span class="particle p1"></span>
+            <span class="particle p2"></span>
+            <span class="particle p3"></span>
+
+            <div class="neon-line neon-line-1"></div>
+            <div class="neon-line neon-line-2"></div>
+
+            <div class="decoration dotted-circle-top"></div>
+            <div class="decoration solid-circle-bottom"></div>
+            <div class="decoration glowing-line"></div>
+
+            <div class="floating-dot dot-1"></div>
+            <div class="floating-dot dot-2"></div>
+
+            <!-- NAVBAR -->
+            <section class="main-navbar">
+                <nav>
+                    <h1 class="logo">Ramzy Ahmed</h1>
+                    <div class="desktop-menu nav-links">
+                        <a href="index.html" class="active">Home</a>
+                        <a href="#person">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#education">Education</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="mobile-menu nav-links">
+                        <a href="index.html" class="active">Home</a>
+                        <a href="#person">About</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#education">Education</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </nav>
+            </section>
+
+            <!-- HERO -->
+            <section class="hero-layout">
+                <!-- Text -->
+                <div class="header-content">
+                    <div class="dynamic-text-wrapper">
+                        <h2 class="typed-text">
+                            <span class="words" id="typed-text"></span>
+                        </h2>
+                    </div>
+                    <p class="subtitle">
+                        Passionate Mobile Developer with expertise in Android (Kotlin & Java)
+                        and Flutter, building smooth and intuitive cross-platform applications
+                        with modern architecture and elegant UI/UX.
+                    </p>
+
+                    <div class="header-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
                 </div>
-            </div>
-        </header>
+
+                <!-- Image -->
+                <div class="hero-image-container">
+                    <div class="image-rings"><span></span><span></span></div>
+                    <div class="circle-bg"></div>
+
+                    <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1766218199/Ramzy-Ahmed-Mobile-App-Developer-color_ow8ehu.webp" alt="Ramzy Ahmed" class="hero-img" />
+
+                    <div class="shape shape-triangle"></div>
+                    <div class="shape shape-zigzag"></div>
+                </div>
+            </section>
+        </section>
+
 
         <section id="person" class="section">
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="200"><span>01.</span> About Me</h2>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100"><span>01.</span> About Me</h2>
             <div class="about-content">
-                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
-                    <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1758353258/Ramzy-Ahmed-Android_Flutter_Developer_pijxjk.webp"
-                        loading="lazy" alt="Ramzy Ahmed Android App Developer">
+                <div class="about-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://res.cloudinary.com/ddfpaqagg/image/upload/v1766218198/Ramzy-Ahmed-Mobile-App-Developer-portrait_zzaour.webp" loading="lazy" alt="Ramzy Ahmed Android App Developer">
                 </div>
-                <div class="about-text" data-aos="fade-right" data-aos-delay="400">
-                    <p><strong>Hello there!</strong> I'm a Mobile Developer with a passion for building beautiful
+                <div class="about-text" data-aos="fade-right" data-aos-delay="300">
+                    <p><strong>Hello there!</strong> I'm a <span class="highlight">Mobile App Developer</span> with a
+                        passion for building beautiful
                         and functional applications that deliver exceptional user experiences.</p>
 
                     <p>With expertise in <span class="highlight">Kotlin</span>, <span class="highlight">Java</span>,
@@ -228,7 +289,7 @@
             <div class="skills-container">
 
                 <!-- Tools & Technologies -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fas fa-tools"></i>Tools & Technologies</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fas fa-laptop-code"></i>Android Studio</span>
@@ -240,7 +301,7 @@
                 </div>
 
                 <!-- Android Development -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fab fa-android"></i> Android Development</h3>
                     <span class="line"></span>
                     <div class="keywords-grid">
@@ -253,7 +314,7 @@
                 </div>
 
                 <!-- Flutter Development -->
-                <div class="skill-category" data-aos="fade-right" data-aos-delay="300">
+                <div class="skill-category" data-aos="fade-right" data-aos-delay="100">
                     <h3><i class="fas fa-mobile-alt"></i> Flutter Development</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fas fa-wind"></i>Flutter SDK</span>
@@ -265,7 +326,7 @@
 
                 <!-- Programming Languages -->
                 <div class="skill-category" data-aos="fade-left" data-aos-delay="100">
-                    <h3 class="section-title"><i class="fas fa-code"></i>Programming Languages</h3>
+                    <h3><i class="fas fa-code"></i>Programming Languages</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fab fa-java"></i>Java</span>
                         <span class="keyword advanced"><i class="fas fa-layer-group"></i>Dart</span>
@@ -274,7 +335,7 @@
                 </div>
 
                 <!-- UI/UX & APIs -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fas fa-paint-brush"></i> UI/UX & APIs</h3>
                     <div class="keywords-grid">
                         <span class="keyword advanced"><i class="fas fa-eye"></i> UI/UX Principles</span>
@@ -284,7 +345,7 @@
                 </div>
 
                 <!-- Architecture & Patterns -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fas fa-sitemap"></i> Architecture & Patterns</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fas fa-broom"></i> Clean Architecture</span>
@@ -296,7 +357,7 @@
                 </div>
 
                 <!-- Databases -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fas fa-database"></i>Databases</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fas fa-database"></i> SQLite</span>
@@ -307,7 +368,7 @@
                 </div>
 
                 <!-- Soft Skills -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
                     <div class="keywords-grid">
                         <span class="keyword master"><i class="fas fa-lightbulb"></i> Problem-Solving</span>
@@ -325,16 +386,15 @@
         <section id="projects" class="section">
             <h2 class="section-title" data-aos="fade-up"><span>03.</span> Projects</h2>
 
-            <!-- Modal for enlarged image -->
-            <div class="image-modal" id="imageModal">
+            <dialog id="imageDialog">
                 <div class="modal-content">
-                    <span class="close-modal" id="closeModal">&times;</span>
                     <img class="modal-image" id="modalImage" src="" alt="Enlarged project image">
+                    <span class="close-modal" id="closeModal">&times;</span>
                 </div>
-            </div>
+            </dialog>
 
             <!-- Android Projects -->
-            <div class="projects-category" data-aos="fade-up" data-aos-delay="200">
+            <div class="projects-category" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="category-title">Android Projects</h3>
                 <p class="category-desc">Here are some Android apps I built, focusing on performance, UI/UX and
                     functionality.</p>
@@ -351,7 +411,7 @@
             </div>
 
             <!-- Flutter Projects -->
-            <div class="projects-category" data-aos="fade-up" data-aos-delay="400">
+            <div class="projects-category" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="category-title">Flutter Projects</h3>
                 <p class="category-desc">Here are some cross-platform Flutter apps with modern design and clean
                     architecture.</p>
@@ -372,7 +432,7 @@
 
         <section id="experience" class="section">
             <h2 class="section-title" data-aos="fade-up"><span>04.</span>Experience</h2>
-            <div class="experience-intro" data-aos="fade-up" data-aos-delay="350">
+            <div class="experience-intro" data-aos="fade-up" data-aos-delay="100">
                 <p>
                     As a passionate and dedicated Mobile Developer, I have built a strong foundation through freelance
                     projects and a professional internship. These experiences allowed me to work on real-world
@@ -383,7 +443,7 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date"><i class="far fa-calendar-alt"></i> 02/2023 – Present</div>
-                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="400">
+                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="100">
                             <h3><i class="fab fa-android"></i> Freelance Android Developer</h3>
                             <ul>
                                 <li>Developed multiple Android apps using <strong>Kotlin</strong> and
@@ -410,7 +470,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date"><i class="far fa-calendar-alt"></i> 02/2025 – Present</div>
-                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="400">
+                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="100">
                             <h3><i class="fas fa-mobile-alt"></i> Freelance Flutter Developer</h3>
                             <ul>
                                 <li>Developed cross-platform apps with <strong>Flutter & Dart</strong>, ensuring
@@ -438,7 +498,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-date"><i class="far fa-calendar-alt"></i> 04/2025 – 05/2025</div>
-                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="500">
+                        <div class="timeline-content" data-aos="fade-right" data-aos-delay="100">
                             <h3><i class="fas fa-briefcase"></i> Android Developer Intern – CodeAlpha</h3>
                             <ul>
                                 <li>Designed and developed 3 Android applications: Flashcard Quiz, Random Quote
@@ -467,10 +527,10 @@
         </section>
 
         <section id="education" class="section">
-            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title" data-aos="fade-up">
                 <span>05.</span> Education
             </h2>
-            <div class="education-intro" data-aos="fade-up" data-aos-delay="150">
+            <div class="education-intro" data-aos="fade-up" data-aos-delay="100">
                 <p>
                     As a self-taught Mobile Developer, I’ve committed myself to continuous growth by learning through
                     online courses, official documentation, tutorials, and practical projects. This journey has allowed
@@ -479,10 +539,10 @@
                     Here’s a summary of my educational journey:
                 </p>
             </div>
-            <div class="education-grid" data-aos="fade-up" data-aos-delay="150">
+            <div class="education-grid" data-aos="fade-up" data-aos-delay="100">
 
                 <!-- Self Learning -->
-                <div class="education-card" data-aos="fade-left" data-aos-delay="200">
+                <div class="education-card" data-aos="fade-left" data-aos-delay="100">
                     <h3><i class="fas fa-graduation-cap"></i> Self-Taught Mobile Developer</h3>
                     <p class="education-period"><i class="far fa-calendar-alt"></i> 2023 - Present</p>
                     <div class="education-details">
@@ -503,7 +563,7 @@
                 </div>
 
                 <!-- Online Courses -->
-                <div class="education-card" data-aos="fade-right" data-aos-delay="300">
+                <div class="education-card" data-aos="fade-right" data-aos-delay="100">
                     <h3><i class="fas fa-laptop-code"></i> Online Courses & Certifications</h3>
                     <p class="education-period"><i class="far fa-calendar-alt"></i> Ongoing</p>
                     <div class="education-details">
@@ -521,7 +581,7 @@
                 </div>
 
                 <!-- Extra Learning -->
-                <div class="education-card" data-aos="fade-left" data-aos-delay="400">
+                <div class="education-card" data-aos="fade-left" data-aos-delay="100">
                     <h3><i class="fas fa-book"></i> Additional Learning</h3>
                     <p class="education-period"><i class="far fa-calendar-alt"></i> Continuous</p>
                     <div class="education-details">
@@ -540,11 +600,11 @@
         <section id="contact" class="section">
             <h2 class="section-title" data-aos="fade-up"><span>06.</span>Contact Me</h2>
             <div class="contact-container">
-                <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
                     <p>I’m always open to discussing new opportunities, collaborations, or simply connecting with
                         like-minded people. If you have a project in mind or just want to say hello, feel free to reach
                         out — I’d love to hear from you!</p>
-                    <div class="contact-info-card" data-aos="fade-left" data-aos-delay="300">
+                    <div class="contact-info-card" data-aos="fade-left" data-aos-delay="100">
                         <h3>Get In Touch</h3>
                         <div class="contact-details">
                             <div class="content-item">
@@ -578,7 +638,7 @@
                 </div>
 
                 <form class="contact-form" action="https://formspree.io/f/xldbyewj" method="post" data-aos="fade-right"
-                    data-aos-delay="300">
+                    data-aos-delay="100">
                     <div class="form-group">
                         <input type="text" id="name" placeholder=" " required>
                         <label for="name">Name</label>
@@ -591,9 +651,9 @@
                         <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
                         <label for="message">Your Message</label>
                     </div>
-                    <button type="submit" class="btn btn-primary send-btn">
+                    <a type="submit" class="btn btn-primary send-btn">
                         <i class="fas fa-paper-plane"></i>Send Message
-                    </button>
+                    </a>
                 </form>
             </div>
         </section>
@@ -619,9 +679,9 @@
         </div>
     </footer>
 
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+    <a class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
-    </button>
+    </a>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="project_mangemnt.js"></script>
