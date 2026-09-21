@@ -1,0 +1,1 @@
+import{U as n,V as i,W as u,Y as d,Z as l,_ as f}from"./index-ZZeKkfse.js";const o=s=>d(f,s);async function g(s,e,r=!1,a=[]){const c=e?[...a,n(e,r?"desc":"asc")]:a;return(await i(u(o(s),...c))).docs.map(t=>({id:t.id,...t.data()}))}async function m(s,e){return l(o(s),e)}const p=!0;export{m as a,g,p as u};
