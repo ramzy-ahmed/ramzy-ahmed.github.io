@@ -1,0 +1,1 @@
+import{o as n,b as i,q as u,c as d,e as l}from"./vendor-firebase-0bt3gfwg.js";import{v as f}from"./index-rkm7MQZl.js";const t=e=>d(f,e);async function D(e,s,r=!1,a=[]){const c=s?[...a,n(s,r?"desc":"asc")]:a;return(await i(u(t(e),...c))).docs.map(o=>({id:o.id,...o.data()}))}async function g(e,s){return l(t(e),s)}const q=!0;export{g as a,D as g,q as u};
